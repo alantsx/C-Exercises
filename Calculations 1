@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* this program reads all the input numbers, displaying the final average, maximum value, minimal value and numbers of even and odds */
+
+int main(int argc, char *argv[]) 
+{
+	// Declaração das Variáveis
+	int max, inputA, divisor, par, impar;
+	float media, soma, min;
+	max = 0; min = 999; soma = 0; inputA = 1; media = 0; divisor = 0; par = 0; impar = 0;	
+	
+	// Entrada de Dados
+	while (inputA != 0) {
+	printf ("Type a number to add to calc. Type 0 to end calc. \n");
+	scanf ("%d", &inputA);
+		if (inputA != 0)
+				divisor++;
+				soma += inputA;
+		if (inputA % 2 == 0 && inputA != 0)
+			par++;
+		else if (inputA % 2 == 1 && inputA != 0)
+			impar++;
+		if (inputA > max && inputA != 0)
+			max = inputA;
+		if (inputA < min && inputA != 0)
+			min = inputA;
+	}
+	media = soma / divisor;
+	
+	printf ("\n Average: %.2f \n Biggest number: %d \n Smallest number: %.0f \n Even numbers: %d \n Odd numbers: %d\n", media, max, min, par, impar);
+		
+	return 0;
+}
