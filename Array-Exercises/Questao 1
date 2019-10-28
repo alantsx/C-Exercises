@@ -1,0 +1,35 @@
+1.	Leia um vetor de 12 posições e em seguida ler também dois valores X e Y quaisquer correspondentes a duas posições no vetor. Ao final seu programa deverá escrever a soma dos valores encontrados nas respectivas posições X e Y.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) 
+{
+	int vetorA[12];
+	int i,x,y,soma;
+	
+	for (i=0;i<12;i++)
+	{
+		printf("\n Digite o %d elemento do vetor\n", i);
+		scanf ("%d", &vetorA[i]);
+	}
+	
+	printf ("\nVetor Preenchido");
+	
+	for (i=0;i<12;i++)
+	{
+		printf ("\n O valor do elemento do vetor na posicao %d e de %d", i, vetorA[i]);	
+	}
+	
+	printf ("\nDigite a posicao do primeiro valor que voce deseja somar\n");
+	scanf ("%d", &x);
+	printf("\nDigite a posicao do segundo valor que voce deseja somar\n");
+	scanf ("%d", &y);
+	
+	soma = vetorA[x] + vetorA[y];
+	
+	printf ("\nO valor do vetor na posicao X e %d e na posicao Y e de %d. A soma destes valores e de %d", vetorA[x],vetorA[y],soma);
+	getchar();
+	
+	return 0;
+}
