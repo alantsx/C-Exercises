@@ -2,36 +2,50 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
 	int vetorA[20];
-	int posicao[20];
-	int i, valor;
-	
+	int i, valor, posicao;
+	char Continua = 's';
+	bool checagem[2] = {true,false};
+	checagem [2] = false;
+
 	for (i=0; i < 20; i++)
 	{
 		printf("\nInforme o valor do vetor na posicao %d \n", i);
 		scanf ("%d", &vetorA[i]);
-		i = posicao[i];
 		system("@cls||clear");
 	}
-	
-	printf ("\nInforme o numero que deseja buscar\n");
-	scanf ("%d", &valor);
-	
-	for (i=0; i < 20; i++)
-		if (valor = vetorA[i])
-		{
-			printf("\nEste valor esta na posicao %d do vetor", i);
-			break;
-		}
-		else
-		{
-			printf("\nEste valor nao foi encontrado");
-		}
 
+    while (Continua == 's')
+    {
+        system("@cls||clear");
+        printf ("\nInforme o numero que deseja buscar\n");
+        scanf ("%d", &valor);
+
+        for (i=0; i < 20; i++)
+            if (valor == vetorA[i])
+            {
+                posicao = i;
+                checagem[2] = true;
+                break;
+            }
+
+        if (checagem[2] == true)
+        {
+            printf ("\nO valor %d buscado esta na posicao %d do vetor\n", valor, posicao);
+        }
+        else
+        {
+            printf ("\nO valor %d nao foi encontrado neste vetor\n", valor);
+        }
+        printf ("Deseja continuar? s/n \n");
+        Continua = getch();
+    }
 	return 0;
 }
+
