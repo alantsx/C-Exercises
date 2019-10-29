@@ -1,0 +1,26 @@
+2.	Declare um vetor de 10 posições e o preencha com os 10 primeiros números impares e o escreva
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) 
+{
+	int vetorA[10];
+	int i, numero;
+	numero = 1;
+	
+	for (i = 0; i < 10; i++)
+	{
+		if (numero % 2 != 0)
+		{
+		vetorA[i] = numero;
+		numero+= 2;
+		}
+	}
+	
+	for (i=0; i<10;i++)
+	{
+		printf("\nO valor da posicao %d no vetor e de %d", i,vetorA[i]);
+	}
+	return 0;
+}
