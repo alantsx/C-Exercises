@@ -1,3 +1,6 @@
+5. Leia um vetor de 40 posições. Contar e escrever quantos valores pares ele possui.
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
