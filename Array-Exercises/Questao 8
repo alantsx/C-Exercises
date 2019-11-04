@@ -1,0 +1,33 @@
+8. Leia um vetor de 40 posições e acumule os valores do primeiro elemento no segundo, deste no terceiro e assim por diante. Ao final, escreva o vetor obtido.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	int vetorA[40];
+	int i, u;
+		
+	for (i = 0; i < 40; i++)
+	{
+		printf ("\n Informe o valor do vetor na posicao %d do Vetor\n", i);
+		scanf ("%d", &vetorA[i]);
+		system ("@cls||clear");
+	}
+	
+	
+	printf ("\nPreenchimento completo\n");
+	
+	for (i = 0; i < 40; i++)
+	{
+		u = i - 1;
+		vetorA[i] = vetorA[i] + vetorA[u];
+		printf ("\n vetorA[%d] => %d", i, vetorA[i]);
+	}
+	
+
+
+	return 0;
+}
